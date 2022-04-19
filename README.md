@@ -1,13 +1,9 @@
 # Blok tech
 
-## Ik
+## Michel Wassing - Tech5
 
 <details open>
 <summary>Hier zal mijn gehele process gedurende blok tech terug te vinden zijn.</summary>
-
-### Auteur:
-Michel Wassing
- 
 </details>
 
 
