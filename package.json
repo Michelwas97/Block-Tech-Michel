@@ -1,5 +1,24 @@
 {
+  "name": "block-tech-michel",
+  "version": "1.0.0",
+  "description": "## Michel Wassing - Tech5",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Michelwas97/Block-Tech-Michel.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Michelwas97/Block-Tech-Michel/issues"
+  },
+  "homepage": "https://github.com/Michelwas97/Block-Tech-Michel#readme",
   "dependencies": {
+    "camelcase": "^6.3.0",
+    "express": "^4.17.3",
     "repeat-string": "^1.6.1"
   }
 }
