@@ -1,7 +1,3 @@
-const persons = require('./modules/persons');
+var student = require('./modules/student')
 
-if (persons.role == 'Teacher') {
-    console.log(persons);
-} else {
-    console.log('failed');
-}
+console.log(student)
