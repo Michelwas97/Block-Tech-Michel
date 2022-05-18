@@ -15,3 +15,7 @@ app.set('views', 'views');
 app.get('/', (req, res) => {
   res.render('pages/index', {title: 'Hey', message: 'Hello there!' })
 })
+
+app.get('/match', (req, res) => {
+  res.render('pages/match', {title: 'Hey', message: 'Hello there!' })
+})
