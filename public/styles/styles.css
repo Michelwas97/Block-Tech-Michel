@@ -161,6 +161,8 @@ html {
   height: 100%;
   font-size: 16px;
   font-size: 62.5%;
+
+  background-color: white;
 }
 
 /* Typografie  */
@@ -250,7 +252,7 @@ body {
     width: 100%;
     max-width: 1440px;
 
-    margin: 0 auto;
+    margin: 30vh auto;
     padding: 0 15px;
 
     
