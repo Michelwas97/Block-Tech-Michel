@@ -19,7 +19,8 @@
   "homepage": "https://github.com/Michelwas97/Block-Tech-Michel#readme",
   "dependencies": {
     "ejs": "^3.1.8",
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "nodemon": "^2.0.16"
   },
   "keywords": [],
   "devDependencies": {}
