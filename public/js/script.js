@@ -1,3 +1,3 @@
-var student = require('../../modules/student')
+const student = require('../../modules/student');
 
-console.log(student)
+console.log(student);

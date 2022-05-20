@@ -1,6 +1,6 @@
-let student = {
-    name : 'michel',
-    lastname : 'wassing'
-}
+const student = {
+  name: 'michel',
+  lastname: 'wassing',
+};
 
-module.exports = student
+module.exports = student;
