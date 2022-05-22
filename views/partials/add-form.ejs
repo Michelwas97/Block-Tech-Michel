@@ -1,14 +1,16 @@
-<form action="/add" method="post">
+<form action="/add" method="post" enctype="multipart/form-data">
     <fieldset>
         <legend>Add person</legend>
+        <label for="profilepic">Upload profile picture:</label>
+        <input type="file" id="profilepic" name="profilepic">
         <label for="firstname">Firstname:</label>
-        <input type="text" id="firstname" name="user_firstname">
+        <input type="text" id="firstname" name="firstname">
         <label for="lastname">Lastname:</label>
-        <input type="text" id="lastname" name="user_lastname">
+        <input type="text" id="lastname" name="lastname">
         <label for="e-mail">e-mail</label>
-        <input type="e-mail" id="e-mail" name="user_e-mail">
-        <label for="opleiding">opleiding</label>
-        <input type="text" id="opleiding" name="user_opleiding">
-        <button type="submit">Voeg toe</button>
+        <input type="e-mail" id="e-mail" name="e-mail">
+        <label for="education">education</label>
+        <input type="text" id="education" name="education">
+        <button type="submit">add person</button>
     </fieldset>
 </form>
