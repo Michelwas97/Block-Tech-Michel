@@ -2,7 +2,6 @@ const mensen = [
   {
     naam: 'Michel',
     achternaam: 'Wassing',
-    imgUrl: '../public/images/lexa.png',
     hobbies: {
       1: 'Gamen',
       2: 'Anime',
@@ -13,7 +12,6 @@ const mensen = [
   {
     naam: 'Caitlin',
     achternaam: 'Peters',
-    imgUrl: '../public/images/lexa.png',
     hobbies: {
       1: 'Uitgaan',
       2: 'Wimpers',
@@ -24,7 +22,6 @@ const mensen = [
   {
     naam: 'Rogier',
     achternaam: 'Verhoeven',
-    imgUrl: '../public/images/lexa.png',
     hobbies: {
       1: 'Uitgaan',
       2: 'Rechten',
@@ -33,3 +30,5 @@ const mensen = [
     liked: null,
   },
 ];
+
+module.exports = mensen;
