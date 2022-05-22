@@ -251,7 +251,6 @@ Above is the tweaked version of the reset css to my whishes
 body {
     display: flex;
     flex-direction: column;
-
     justify-content: space-between;
 
     width: 100%;
@@ -270,9 +269,14 @@ body {
     background-color: lightblue;
 }
 
-footer ul {
+body > footer ul {
     display: flex;
     justify-content: space-between;
 
     width: 100%;
+}
+
+#update > fieldset {
+  display: flex;
+  justify-content: space-between;
 }
