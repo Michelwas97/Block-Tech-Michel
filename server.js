@@ -1,10 +1,9 @@
+/* eslint-disable no-undef */
   /************************************************
     * Starting variables
     ***********************************************/
 
-  // eslint-disable-next-line no-undef
   const express = require('express');
-  // eslint-disable-next-line no-undef
   const multer  = require('multer');
   require('dotenv').config();
   const upload = multer({ dest: 'public/images/profile/' });
@@ -37,6 +36,33 @@
       liked: null,
     },
   ];
+
+  /************************************************
+   * Database connection
+   ***********************************************/
+
+  const { MongoClient } = require('mongodb');
+
+  async function connectDB() {
+    const uri =
+      'mongodb+srv://' +
+      process.env.DB_USERNAME + ':' +
+      process.env.DB_PASS + '@' +
+      process.env.DB_HOST + '/' +
+      process.env.DB_NAME + '/?retryWrites=true&w=majority';
+  
+    const client = new MongoClient(uri, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+
+    try {
+      await client.connect();
+      db = client.db(process.env.DB_NAME);
+    } catch (error) {
+      throw error;
+    }
+  }
  
  /************************************************
    * feedback in the console for starting app
