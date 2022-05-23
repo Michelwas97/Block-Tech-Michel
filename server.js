@@ -2,12 +2,14 @@
     * Starting variables
     ***********************************************/
 
+  // eslint-disable-next-line no-undef
   const express = require('express');
+  // eslint-disable-next-line no-undef
   const multer  = require('multer');
-  const upload = multer({ dest: 'public/images/profile/' })
+  require('dotenv').config();
+  const upload = multer({ dest: 'public/images/profile/' });
   
   const app = express();
-  const port = 3000;
  
  /************************************************
    * Dummy data
@@ -40,8 +42,8 @@
    * feedback in the console for starting app
    ***********************************************/
  
-  app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`);
+  app.listen(process.env.PORT, () => {
+    console.log(`Example app listening on port ${process.env.PORT}`);
   });
   
  /************************************************
@@ -87,7 +89,7 @@
       lastname: req.body.firstname,
       email: req.body.firstname,
       opleiding: req.body.firstname,
-    })
+    });
 
     res.render('pages/admin', {data: mensen});
   });
