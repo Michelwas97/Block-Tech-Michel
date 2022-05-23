@@ -256,7 +256,7 @@ body {
     width: 100%;
     height: 100%;
     max-width: 425px;
-    max-height: 700px;
+    max-height: 90vh;
 
     margin: 4vh auto;
     padding: 40px;
@@ -279,4 +279,11 @@ body > footer ul {
 #update > fieldset {
   display: flex;
   justify-content: space-between;
+}
+
+#formAddFieldset {
+  display: flex;
+  flex-direction: column;
+
+  flex-wrap: nowrap;
 }

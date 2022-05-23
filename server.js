@@ -6,37 +6,14 @@
   const express = require('express');
   const multer  = require('multer');
   require('dotenv').config();
+
+  const arrayify = require('array-back');
   const upload = multer({ dest: 'public/images/profile/' });
   
   const app = express();
- 
- /************************************************
-   * Dummy data
-   ***********************************************/
-  const mensen = [
-    {
-      firstname: 'Michel',
-      lastname: 'Wassing',
-      email: 'test@test',
-      education: 'Communication Multimedia Design',
-      liked: null,
-    },
-    {
-      firstname: 'Caitlin',
-      lastname: 'Peters',
-      email: 'test@test',
-      education: 'Rechten',
-      liked: null,
-    },
-    {
-      firstname: 'Rogier',
-      lastname: 'Verhoeven',
-      email: 'test@test',
-      education: 'Rechten',
-      liked: null,
-    },
-  ];
 
+  let db = null;
+ 
   /************************************************
    * Database connection
    ***********************************************/
@@ -70,6 +47,7 @@
  
   app.listen(process.env.PORT, () => {
     console.log(`Example app listening on port ${process.env.PORT}`);
+    connectDB().then(console.log('We have a connection'));
   });
   
  /************************************************
@@ -87,16 +65,23 @@
    * Routing
    ***********************************************/
 
-  app.get('/', (req, res) => {
-    res.render('pages/index', { data: mensen });
+  app.get('/', async (req, res) => {
+    const studenten = await db.collection('studenten').find({},{}).toArray();
+    console.log(studenten);
+
+    res.render('pages/index', { data: studenten });
   });
 
-  app.get('/match', (req, res) => {
-    res.render('pages/match', { data: mensen });
+  app.get('/match', async (req, res) => {
+    const studenten = await db.collection('studenten').find({},{}).toArray();
+
+    res.render('pages/match', { data: studenten });
   });
 
-  app.get('/admin', (req, res) => {
-    res.render('pages/admin', { data: mensen });
+  app.get('/admin', async (req, res) => {
+    const studenten = await db.collection('studenten').find({},{}).toArray();
+
+    res.render('pages/admin', { data: studenten });
   });
 
   app.get('*', (req, res) => {
@@ -107,9 +92,10 @@
    * Routing
    ***********************************************/
 
-  app.post('/add', upload.single('profilepic'), (req, res) => {
+  app.post('/add', upload.single('profilepic'), async (req, res) => {
+    const studenten = await db.collection('studenten').find({},{}).toArray();
 
-    mensen.push ({
+    studenten.push ({
       profilepic: req.file,
       firstname: req.body.firstname,
       lastname: req.body.firstname,
