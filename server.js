@@ -19,6 +19,7 @@
    ***********************************************/
 
   const { MongoClient } = require('mongodb');
+  const { ObjectId } = require('mongodb');
 
   async function connectDB() {
     const uri =
@@ -93,16 +94,19 @@
    ***********************************************/
 
   app.post('/add', upload.single('profilepic'), async (req, res) => {
-    const studenten = await db.collection('studenten').find({},{}).toArray();
 
-    studenten.push ({
-      profilepic: req.file,
+    let student = {
+      profilepic: req.file.filename,
       firstname: req.body.firstname,
       lastname: req.body.firstname,
       email: req.body.firstname,
       opleiding: req.body.firstname,
-    });
+      liked: false
+    };
 
-    res.render('pages/admin', {data: mensen});
+    // Add student to database
+    await db.collection('studenten').insertOne(student);
+
+    res.render('pages/admin');
   });
 
