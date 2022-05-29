@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+
+    <%- include('../components/head'); %>
+
+	<body>
+        <%- include('../components/header'); %>
+
+			<main>
+				<section>
+					<% for (let index=0; index < data.length; index++) { %>
+						<h1><%= data[index].firstname %></h1>
+					<% } %>
+				</section>
+			</main>
+
+        <%- include('../components/footer'); %>
+
+			<script src="../../public/js/script.js"></script>
+	</body>
+
+</html>

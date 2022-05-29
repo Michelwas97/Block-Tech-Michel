@@ -8,7 +8,6 @@
   require('dotenv').config();
 
   const arrayify = require('array-back');
-  const upload = multer({ dest: 'public/images/profile/' });
   
   const app = express();
 
@@ -68,12 +67,17 @@
 
   app.get('/', async (req, res) => {
     const studenten = await db.collection('studenten').find({},{}).toArray();
-    console.log(studenten);
 
     res.render('pages/index', { data: studenten });
   });
 
   app.get('/match', async (req, res) => {
+    const studenten = await db.collection('studenten').find({},{}).toArray();
+
+    res.render('pages/match', { data: studenten });
+  });
+
+  app.get('/liked', async (req, res) => {
     const studenten = await db.collection('studenten').find({},{}).toArray();
 
     res.render('pages/match', { data: studenten });
@@ -90,7 +94,29 @@
   });
 
  /************************************************
-   * Routing
+   * Handle image upload
+   ***********************************************/
+
+  const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      // Specify what upload path should be used 
+      cb(null, './public/images/profile'); 
+    },
+    filename: function (req, file, cb) {
+      cb(null,
+        // Han advised usage of date now and filename to make the name unique
+        Date.now() + '-' + file.originalname 
+      );
+    }
+  });
+  
+  const upload = multer({
+    // Store images inside the specified path
+    storage: storage,
+  });
+
+  /************************************************
+   * Add student to database
    ***********************************************/
 
   app.post('/add', upload.single('profilepic'), async (req, res) => {
@@ -98,9 +124,9 @@
     let student = {
       profilepic: req.file.filename,
       firstname: req.body.firstname,
-      lastname: req.body.firstname,
-      email: req.body.firstname,
-      opleiding: req.body.firstname,
+      lastname: req.body.lastname,
+      email: req.body.email,
+      education: req.body.education,
       liked: false
     };
 
