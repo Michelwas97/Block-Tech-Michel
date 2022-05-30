@@ -64,8 +64,9 @@
  /************************************************
    * Routing
    ***********************************************/
-
+  
   app.get('/', async (req, res) => {
+    console.log(db);
     const studenten = await db.collection('studenten').find({},{}).toArray();
 
     res.render('pages/index', { data: studenten });
