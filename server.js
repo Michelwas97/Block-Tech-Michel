@@ -25,8 +25,8 @@
       'mongodb+srv://' +
       process.env.DB_USERNAME + ':' +
       process.env.DB_PASS + '@' +
-      process.env.DB_HOST + '/' +
-      process.env.DB_NAME + '/?retryWrites=true&w=majority';
+      process.env.DB_HOST + '/?retryWrites=true&w=majority';
+      console.log(uri);
   
     const client = new MongoClient(uri, {
       useNewUrlParser: true,
@@ -66,7 +66,6 @@
    ***********************************************/
   
   app.get('/', async (req, res) => {
-    console.log(db);
     const studenten = await db.collection('studenten').find({},{}).toArray();
 
     res.render('pages/index', { data: studenten });
