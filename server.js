@@ -65,24 +65,26 @@
    * Routing
    ***********************************************/
 
-  const studenten = await db.collection('studenten').find({},{}).toArray();
-
   app.get('/', async (req, res) => {
+    const studenten = await db.collection('studenten').find({},{}).toArray();
 
     res.render('pages/index', { data: studenten });
   });
 
   app.get('/match', async (req, res) => {
+    const studenten = await db.collection('studenten').find({},{}).toArray();
 
     res.render('pages/match', { data: studenten });
   });
 
   app.get('/liked', async (req, res) => {
+    const studenten = await db.collection('studenten').find({},{}).toArray();
 
     res.render('pages/match', { data: studenten });
   });
 
   app.get('/admin', async (req, res) => {
+    const studenten = await db.collection('studenten').find({},{}).toArray();
 
     res.render('pages/admin', { data: studenten });
   });
