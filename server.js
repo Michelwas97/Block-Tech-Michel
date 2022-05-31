@@ -25,8 +25,8 @@
       'mongodb+srv://' +
       process.env.DB_USERNAME + ':' +
       process.env.DB_PASS + '@' +
-      process.env.DB_HOST + '/?retryWrites=true&w=majority';
-      console.log(uri);
+      process.env.DB_HOST + 
+      '/?retryWrites=true&w=majority';
   
     const client = new MongoClient(uri, {
       useNewUrlParser: true,
