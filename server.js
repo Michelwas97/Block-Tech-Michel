@@ -68,25 +68,25 @@
   app.get('/', async (req, res) => {
     const studenten = await db.collection('studenten').find({},{}).toArray();
 
-    res.render('pages/index', { data: studenten });
+    res.render('pages/index', { studenten: studenten });
   });
 
   app.get('/match', async (req, res) => {
     const studenten = await db.collection('studenten').find({},{}).toArray();
 
-    res.render('pages/match', { data: studenten });
+    res.render('pages/match', { studenten: studenten });
   });
 
   app.get('/liked', async (req, res) => {
     const studenten = await db.collection('studenten').find({},{}).toArray();
 
-    res.render('pages/match', { data: studenten });
+    res.render('pages/match', { studenten: studenten });
   });
 
   app.get('/admin', async (req, res) => {
     const studenten = await db.collection('studenten').find({},{}).toArray();
 
-    res.render('pages/admin', { data: studenten });
+    res.render('pages/admin', { studenten: studenten });
   });
 
   app.get('*', (req, res) => {
