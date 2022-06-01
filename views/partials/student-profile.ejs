@@ -1,5 +1,5 @@
+<% studenten.forEach(function(student) { %>
 <section class="student-profile-container">
-    <% studenten.forEach(function(student) { %>
     <div class="profileimg-container">
         <img
             src="/public/images/profile/<%= student.profilepic %>"
@@ -10,34 +10,14 @@
         <h2><%= student.firstname + ' ' + student.lastname %></h2>
         <div>
             <ul>
-                <li>
-                    <span>E-mail:</span>
-                    <%= student.email %>
-                </li>
-                <li>
-                    <span>Education:</span>
-                    <%= student.education %>
-                </li>
+                <li>E-mail: <%= student.email %></li>
+                <li>Education:<%= student.education %></li>
             </ul>
             <form id="update" action="/update" method="post">
-                <button
-                    name="like"
-                    type="submit"
-                    value="<%= student._id %>"
-                    class="btn-liking"
-                >
-                    unlike
-                </button>
-                <button
-                    name="like"
-                    type="submit"
-                    value="<%= student._id %>"
-                    class="btn-liking"
-                >
-                    like
-                </button>
+                <button name="like" type="submit" value="<%= student._id %>">unlike</button>
+                <button name="like" type="submit" value="<%= student._id %>">like</button>
             </form>
         </div>
     </div>
-    <% }); %>
 </section>
+<% }); %>
