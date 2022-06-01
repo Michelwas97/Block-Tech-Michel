@@ -190,8 +190,7 @@ h1 {
 
   margin-bottom: 16px;
 
-  font-size: 48px;
-  font-size: 3rem;
+  font-size: 4rem;
 
 }
 
@@ -199,14 +198,12 @@ h1 {
 h2 {
   color: #ffffff;
   margin-bottom: 12px;
-  font-size: 22px;
-  font-size: 2.2rem;
+  font-size: 3rem;
 }
 
 /* Heading 3 */
 h3 {
-  font-size: 18px;
-  font-size: 1.8rem;
+  font-size: 2rem;
 }
 
 p {
@@ -251,6 +248,7 @@ Above is the tweaked version of the reset css to my whishes
 :root {
   --color-black: #000;
   --color-white: #fff;
+  --bg-color-body: #2a5d6e;
   --bg-color-main: #add8e6;
 
   --bg-color-menu: #6298AA;
@@ -262,12 +260,15 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   
-  background-color: var(--color-white);
+  background-color: var(--bg-color-body);
 
-  padding: 40px;
+  width: 100%;
+  height: 100%;
 
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
 }
 
 main {
@@ -286,7 +287,12 @@ nav ul {
 }
 
 nav ul li{
+  margin-right: 20px;
   font-size: 24px;
+}
+
+nav ul li:last-of-type {
+  margin: 0;
 }
 
 #update > fieldset {
@@ -304,7 +310,7 @@ nav ul li{
 .student-profile-container {
   width: 100%;
 
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .profileimg-container {
@@ -315,7 +321,7 @@ nav ul li{
   overflow: hidden;
 
   padding-bottom: 90%;
-
+  margin-bottom: 10px;
 }
 
 .profileimg-container img {
@@ -328,4 +334,8 @@ nav ul li{
 
   object-fit: cover;
   object-position: center;
+}
+
+.student-profile-content div ul {
+  margin-bottom: 10px;
 }
