@@ -35,7 +35,7 @@ Use the cloned .env.example file, fill in the information as specified. Please t
 ```
 5. Localhost
 ```
-Go to localhost:(port u specified) in your browser
+Go to localhost:(port you specified) in your browser
 ```
 
 ### 🖱️ Install Node
