@@ -29,9 +29,13 @@ npm install
 ```
 nodemon index.js
 ```
-4. Localhost
+4. env file
 ```
-Go to localhost:3000 in your browser
+Use the cloned .env.example file, fill in the information as specified. Please take note that DB_NAME is case sensitive
+```
+5. Localhost
+```
+Go to localhost:(port u specified) in your browser
 ```
 
 ### 🖱️ Install Node
