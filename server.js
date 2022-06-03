@@ -133,6 +133,16 @@
     // Add student to database
     await db.collection('studenten').insertOne(student);
 
-    res.render('pages/admin');
+    res.render('pages/index');
+  });
+
+  app.post('/update', async (req, res) => {
+
+    console.log(req.body);
+
+    // if () {
+
+    // }
+    res.redirect('/');
   });
 
