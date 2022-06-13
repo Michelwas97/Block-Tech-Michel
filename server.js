@@ -141,25 +141,13 @@
 
      if (req.body.hasOwnProperty('like')) {
       await db.collection('studenten').updateOne(
-        {
-          _id: ObjectId(req.body.like),
-        },
-        {
-          $set: {
-            liked: true,
-          },
-        }
+        {_id: ObjectId(req.body.like)},
+        {$set: {liked: true}}
       );
      } else {
       await db.collection('studenten').updateOne(
-        {
-          _id: ObjectId(req.body.unlike),
-        },
-        {
-          $set: {
-            liked: false,
-          }
-        }
+        {_id: ObjectId(req.body.unlike)},
+        {$set: {liked: false}}
       );
      }
 
