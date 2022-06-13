@@ -1,0 +1,25 @@
+<% studenten.forEach(function(student) { %>
+    <section class="student-profile-container">
+        <div class="profileimg-container">
+            <img
+                src="/public/images/profile/<%= student.profilepic %>"
+                alt="student"
+            />
+        </div>
+        <div class="student-profile-content">
+            <h2><%= student.firstname + ' ' + student.lastname %></h2>
+            <div>
+                <ul>
+                    <li>E-mail: <%= student.email %></li>
+                    <li>Education: <%= student.education %></li>
+                    <li>Liked: <%= student.liked %></li>
+                </ul>
+                <form id="update" action="/update" method="post">
+                    <button name="unlike" type="submit" value="<%= student._id %>">unlike</button>
+                    <button name="like" type="submit" value="<%= student._id %>">like</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <% }); %>
+    

@@ -72,16 +72,10 @@
     res.render('pages/index', { studenten: studenten });
   });
 
-  app.get('/match', async (req, res) => {
-    const studenten = await db.collection('studenten').find({},{}).toArray();
-
-    res.render('pages/match', { studenten: studenten });
-  });
-
   app.get('/liked', async (req, res) => {
-    const studenten = await db.collection('studenten').find({},{}).toArray();
+    const studenten = await db.collection('studenten').find({liked: true}).toArray();
 
-    res.render('pages/match', { studenten: studenten });
+    res.render('pages/liked', { studenten: studenten });
   });
 
   app.get('/admin', async (req, res) => {
