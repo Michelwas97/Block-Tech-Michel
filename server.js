@@ -19,6 +19,7 @@
    ***********************************************/
 
   const { MongoClient } = require('mongodb');
+  const { ObjectId } = require('mongodb');
 
   async function connectDB() {
     const uri =
@@ -138,11 +139,30 @@
 
   app.post('/update', async (req, res) => {
 
-    console.log(req.body);
+     if (req.body.hasOwnProperty('like')) {
+      await db.collection('studenten').updateOne(
+        {
+          _id: ObjectId(req.body.like),
+        },
+        {
+          $set: {
+            liked: true,
+          },
+        }
+      );
+     } else {
+      await db.collection('studenten').updateOne(
+        {
+          _id: ObjectId(req.body.remove),
+        },
+        {
+          $set: {
+            liked: false,
+          }
+        }
+      );
+     }
 
-    // if () {
-
-    // }
     res.redirect('/');
   });
 
