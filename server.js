@@ -153,7 +153,7 @@
      } else {
       await db.collection('studenten').updateOne(
         {
-          _id: ObjectId(req.body.remove),
+          _id: ObjectId(req.body.unlike),
         },
         {
           $set: {
