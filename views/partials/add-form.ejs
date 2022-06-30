@@ -1,16 +1,13 @@
 <form action="/add" method="post" enctype="multipart/form-data">
     <fieldset id="formAddFieldset">
-        <legend>Add person</legend>
-        <label for="profilepic">Upload profile picture:</label>
-        <div id="drop_zone">
-            <input type="file" id="profilepic" name="profilepic">
+        <div class="drop-zone">
+            <span class="drop-zone__prompt">Drop profielfoto hier of klik voor upload</span>
+            <input type="file" name="profilepic" class="drop-zone__input">
         </div>
         <label for="firstname">Firstname:</label>
         <input type="text" id="firstname" name="firstname">
         <label for="lastname">Lastname:</label>
         <input type="text" id="lastname" name="lastname">
-        <label for="email">e-mail</label>
-        <input type="email" id="email" name="email">
         <label for="education">education</label>
         <input type="text" id="education" name="education">
         <button type="submit">add person</button>
