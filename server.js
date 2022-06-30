@@ -5,10 +5,7 @@
 
   const express = require('express')
   const app = express()
-  const { ObjectId } = require('mongodb')
   const connectDB = require('./config/db')
-  const mongoose = require('mongoose')
-  const arrayify = require('array-back')
 
   /************************************************
   * Database connection
