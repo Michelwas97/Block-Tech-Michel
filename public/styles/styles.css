@@ -437,8 +437,7 @@ input[type='text'] {
 
 /* quote styling */
 
-.quote-txt,
-.quote-txt2 {
+.quote-txt {
     /* Dont change this, this is altered in javascript */
     display: none;
 
@@ -446,6 +445,18 @@ input[type='text'] {
     font-weight: 400;
     font-size: 16px;
     color: var(--color-darkblue);
+}
+
+.quote-txt2 {
+   /* Dont change this, this is altered in javascript */
+   display: none;
+
+   font-family: 'Quicksand', sans-serif;
+   font-weight: 400;
+   font-size: 18px;
+   color: var(--color-darkblue);
+
+   margin-bottom: 10px;
 }
 
 /* label & input styling */

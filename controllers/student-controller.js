@@ -29,8 +29,6 @@ const updateStudent = async (req, res) => {
  * Get student from database
  ***********************************************/
 
-//extra parameter, meegeven om door te geven aan welke pagina data uitgelezen moet worden
-
  const getStudent = async (req, res) => {
     try {
         const students = await Student.find({}, {}).exec();
