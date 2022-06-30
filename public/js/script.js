@@ -1,5 +1,7 @@
 const inputElement = document.querySelector('.drop-zone__input');
-const dropZoneElement = inputElement.closest('.drop-zone');
+const dropZoneElement = document.querySelector('.drop-zone');
+
+dropZoneElement.style.visibility = 'visible';
 
 dropZoneElement.addEventListener('click', (e) => {
     inputElement.click();
@@ -68,3 +70,19 @@ function updateThumbnail(dropZoneElement, file) {
         thumbnailElement.style.backgroundImage = null;
     }
 }
+
+/**
+ * Public API Inspiration.
+ *
+ * This API updates the qoute once and hour.
+ */
+
+const apiUrl = 'https://api.goprogram.ai/inspiration';
+document.querySelector('.quote-txt').style.display = 'block'
+
+fetch(apiUrl)
+    .then( (data) => data.json())
+    .then( (quote) => {
+        document.querySelector('.quote-txt2').style.display = 'block'
+        document.querySelector('.quote-txt2').innerHTML = quote.quote
+        }) 
