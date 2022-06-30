@@ -1,15 +1,22 @@
+<div class="quote-container">
+    <p class="quote-txt">Wordt gemotiveerd door deze inspirationele quote:</p>
+    <p class="quote-txt2"></p>
+</div>
+
 <form action="/add" method="post" enctype="multipart/form-data">
     <fieldset id="formAddFieldset">
         <div class="drop-zone">
-            <span class="drop-zone__prompt">Drop profielfoto hier of klik voor upload</span>
-            <input type="file" name="profilepic" class="drop-zone__input">
+            <span class="drop-zone__prompt"
+                >Drop profielfoto hier of klik voor upload</span
+            >
+            <input type="file" name="profilepic" class="drop-zone__input" />
         </div>
         <label for="firstname">Firstname:</label>
-        <input type="text" id="firstname" name="firstname">
+        <input type="text" id="firstname" name="firstname" />
         <label for="lastname">Lastname:</label>
-        <input type="text" id="lastname" name="lastname">
+        <input type="text" id="lastname" name="lastname" />
         <label for="education">education</label>
-        <input type="text" id="education" name="education">
-        <button type="submit">add person</button>
+        <input type="text" id="education" name="education" />
+        <button class="btn" type="submit">Voeg student toe</button>
     </fieldset>
 </form>

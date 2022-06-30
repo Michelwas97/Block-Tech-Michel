@@ -15,9 +15,9 @@
                 <li>Liked: <%= student.liked %></li>
             </ul>
             <form id="update" action="/update" method="post">
-                <button name="unlike" type="submit" value="<%= student._id %>">unlike</button>
-                <button name="like" type="submit" value="<%= student._id %>">like</button>
-                <button name="delete" type="submit" value="<%= student._id %>">delete</button>
+                <button class="btn" name="unlike" type="submit" value="<%= student._id %>">Unlike</button>
+                <button class="btn" name="like" type="submit" value="<%= student._id %>">Like</button>
+                <button class="btn" name="delete" type="submit" value="<%= student._id %>">Delete</button>
             </form>
         </div>
     </div>
